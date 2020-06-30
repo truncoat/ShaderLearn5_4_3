@@ -1,5 +1,7 @@
 ﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
 
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+
 Shader "Custom/NewSurfaceShader" {
      SubShader{
          pass{
@@ -21,10 +23,10 @@ Shader "Custom/NewSurfaceShader" {
              v2f vert(appdata_base v){
                  v2f o;
                  o.pos=mul(UNITY_MATRIX_MVP,v.vertex);
-                 float3 N=normalize(v.normal);
-                 float3 L=normalize(_WorldSpaceLightPos0);
-                 N=mul
-                 float ndotl=saturate(dot(N,L));
+                 float3 N=normalize(v.normal);//得到法向量（模型坐标）
+                 float3 L=normalize(_WorldSpaceLightPos0);//得到光照向量（世界坐标）
+                 N=mul(unity_ObjectToWorld,N);//同一法向量和光照向量
+                 float ndotl=saturate(dot(N,L));//  saturate 作用是将值卡在 0-1之间 
                 o.color=_LightColor0*ndotl;// 平行光计算
                 // o.color.rgb=ShadeVertexLights(v.vertex,v.normal);
                 float3 wPos=mul(unity_ObjectToWorld,v.vertex).xyz;
