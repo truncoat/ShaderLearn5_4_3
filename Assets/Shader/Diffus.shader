@@ -26,7 +26,7 @@ Shader "Custom/NewSurfaceShader" {
              v2f vert(appdata_base v){
                  v2f o;
                  o.pos=mul(UNITY_MATRIX_MVP,v.vertex);
-                // o.color=v.COLOR;
+                //o.color=v.COLOR;
                  o.normal=v.normal;
                  return o;
              }
@@ -39,15 +39,13 @@ Shader "Custom/NewSurfaceShader" {
                  N=normalize(N);
                  float ndotl=saturate(dot(N,L));//  saturate 作用是将值卡在 0-1之间 
                 fixed4 color1=_LightColor0*ndotl;// 平行光计算
-                // o.color.rgb=ShadeVertexLights(v.vertex,v.normal);
+                 IN.color.rgb=ShadeVertexLights(IN.pos,IN.normal);
                 float3 wPos=mul(unity_ObjectToWorld,IN.pos).xyz;
                 //平行光与 其他光源 相加 即得到混合光效果
                 color1.rgb+=Shade4PointLights(unity_4LightPosX0,unity_4LightPosY0,unity_4LightPosZ0,
                                                              unity_LightColor[0].rgb,unity_LightColor[1].rgb,unity_LightColor[2].rgb,unity_LightColor[3].rgb,
                                                              unity_4LightAtten0,
                                                              wPos,N);
-
-
                   return  color1+UNITY_LIGHTMODEL_AMBIENT;
              }
 
