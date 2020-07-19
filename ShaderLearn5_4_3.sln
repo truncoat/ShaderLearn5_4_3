@@ -1,14 +1,18 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-
+Project("{B2E26746-1E0C-D458-7C77-897807010908}") = "ShaderLearn5_4_3", "Assembly-CSharp.csproj", "{2CA008CE-16FA-6F72-92C3-D0B3D06CFCD0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-
+		{2CA008CE-16FA-6F72-92C3-D0B3D06CFCD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CA008CE-16FA-6F72-92C3-D0B3D06CFCD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CA008CE-16FA-6F72-92C3-D0B3D06CFCD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CA008CE-16FA-6F72-92C3-D0B3D06CFCD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

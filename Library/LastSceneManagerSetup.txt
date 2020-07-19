@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/1.unity
+- path: Assets/Frag_Color.unity
   isLoaded: 1
   isActive: 1
